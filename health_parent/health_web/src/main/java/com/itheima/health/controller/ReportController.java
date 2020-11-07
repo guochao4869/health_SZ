@@ -66,16 +66,6 @@ public class ReportController {
         // 调用服务去查询12个月的数据
         List<Integer> memberCount = memberService.getMemberReport(months);
         // 构建返回的数据
-        /**
-         * {
-         *     flag
-         *     message:
-         *     data:{
-         *         months:
-         *         memberCount:
-         *     }
-         * }
-         */
         Map<String,Object> resultMap = new HashMap<String,Object>();
         resultMap.put("months",months);
         resultMap.put("memberCount",memberCount);
@@ -90,23 +80,6 @@ public class ReportController {
         // 调用服务查询套餐预约占比, map {value, name} name=套餐名称
         List<Map<String,Object>> list = setmealService.getSetmealReport();
         List<String> setmealNames = list.stream().map(m -> (String)m.get("name")).collect(Collectors.toList());
-        //List<String> setmealNames = new ArrayList<String>();
-        //for (Map<String, Object> map : list) {
-        //    // {value, name: 套餐名称}
-        //    String setmealName = (String) map.get("name");
-        //    setmealNames.add(setmealName);
-        //}
-        /**
-         * {
-         *     flag
-         *     message
-         *     data:{
-         *         setmealNames: ['名称'...],
-         *         setmealCount: [{value,name}] list
-         *     }
-         * }
-         */
-        // 构建前端需要的数据格式
         Map<String,Object> resultMap = new HashMap<String,Object>(2);
         resultMap.put("setmealNames", setmealNames);
         resultMap.put("setmealCount", list);
@@ -181,4 +154,5 @@ public class ReportController {
         }
         return null;
     }
+
 }

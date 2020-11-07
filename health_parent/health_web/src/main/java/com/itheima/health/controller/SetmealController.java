@@ -113,6 +113,16 @@ public class SetmealController {
     @GetMapping("/findById")
     public Result findById(int id){
         Setmeal setmeal = setmealService.findById(id);
+        /**
+         * {
+         *     flag:
+         *     message:
+         *     data:{
+         *          setmeal: setmeal,
+         *          domain: QiNiuUtils.DOMAIN
+         *     }
+         * }
+         */
         Map<String,Object> resultMap = new HashMap<String,Object>(2);
         resultMap.put("setmeal",setmeal);
         resultMap.put("domain",QiNiuUtils.DOMAIN);

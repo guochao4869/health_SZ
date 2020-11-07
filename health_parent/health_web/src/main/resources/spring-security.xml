@@ -39,7 +39,6 @@
     </security:authentication-manager>
 
     <security:global-method-security pre-post-annotations="enabled"/>
-    <bean id="springSecurityUserService" class="com.itheima.health.security.SpringSecurityUserService"/>
     <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 </beans>

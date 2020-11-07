@@ -1,6 +1,9 @@
 package com.itheima.health.service;
 
+import com.itheima.health.pojo.Menu;
 import com.itheima.health.pojo.User;
+
+import java.util.List;
 
 /**
  * <p>
@@ -18,4 +21,11 @@ public interface UserService {
      * @return
      */
     User findUserByUsername(String username);
+
+    /**
+     * 通过用户名查询用户的菜单
+     * @param username
+     * @return
+     */
+    List<Menu> getMenu(String username);
 }

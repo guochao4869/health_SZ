@@ -1,9 +1,6 @@
 package com.itheima.health.dao;
 
-import com.itheima.health.pojo.Menu;
 import com.itheima.health.pojo.User;
-
-import java.util.List;
 
 /**
  * <p>
@@ -20,19 +17,4 @@ public interface UserDao {
      * @return
      */
     User findByUsername(String username);
-
-
-    /**
-     * 获取一级菜单目录列表
-     * @param username
-     * @return
-     */
-    List<Menu> getMenu(String username);
-
-    /**
-     * 获取二级菜单目录列表
-     * @param parentMenuId
-     * @return
-     */
-    List<Menu> getMenu2(Integer parentMenuId);
 }

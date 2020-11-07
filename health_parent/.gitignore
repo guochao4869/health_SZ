@@ -1,2 +1,8 @@
-.idea
-health_parent.iml
+# 所有子文件夹下的.idea
+**/.idea
+# 所有子文件夹下的.iml
+**/*.iml
+# 所有子文件夹下的target
+**/target
+# 日志
+mylog.txt
